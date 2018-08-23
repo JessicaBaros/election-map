@@ -76,12 +76,6 @@ setStateResults = function (state)
         candidate1Results.innerText = candice.electionResults[state];
         candidate2Results.innerText = midas.electionResults[state];
 
-        if (theStates[state].winner === null){
-            winnersName.innerText = "DRAW";
-        } else {
-            winnersName.innerText = theStates[state].winner.name;
-        }
-
       //STATE WINNER
         theStates[state].winner = null;
 
@@ -100,6 +94,12 @@ setStateResults = function (state)
            theStates[state].rgbColor = stateWinner.partyColor;
          } else {
            theStates[state].rgbColor = [11,32,57];
+         }
+
+         if (theStates[state].winner === null){
+             winnersName.innerText = "DRAW";
+         } else {
+             winnersName.innerText = theStates[state].winner.name;
          }
 };
 
